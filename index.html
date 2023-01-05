@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shineponics</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bellota:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #558B2F;
+      --secondary: white;
+      --tertiary: #023436;
+      --accent: #FFA000;
+    }
+    body {
+      font-family: 'Cabin', sans-serif;
+      color: var(--secondary);
+      margin: 0;
+      padding: 0;
+    }
+    img { width: 100% }
+    h1, h2, h3 { 
+      color: var(--secondary); 
+      font-size: 2.2rem;
+      position: relative;
+      margin: 1.2rem 0;
+    }
+    h2, h3 { font-size: 1.8rem; }
+    h1::after, h2::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100px;
+      border-bottom: 2px solid var(--accent);
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin: 0 0 20px;
+    }
+    ul {
+      padding-top: 10px;
+    }
+    nav {
+      width: 100%;
+      background-color: var(--tertiary);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav li {
+      padding: 20px;
+      font-family: 'Bellota', serif;
+    }
+    a { 
+      color: var(--secondary);
+      display: inline-block;
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+    a:hover { 
+      text-decoration-color: var(--tertiary);
+      text-decoration: underline;
+      /* text-decoration-color: var(--accent); */
+    }
+    .cta {
+      font-family: 'Bellota', serif;
+      padding: 20px;
+      margin: 20px 0;
+      background-color: var(--tertiary);
+    }
+    header {
+      background-image: url('assets/header-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .header-img {
+      max-width: 500px;
+      flex: 1;
+      display: flex;
+    }
+    .header-img img {
+      justify-self: center;
+      align-self: center;
+    }
+    section {
+      background-color: var(--primary);
+      padding: 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -10px;
+    }
+    .full-width {
+      width: 100%;
+    }
+    .justify-around {
+      justify-content: space-around;
+    }
+    .partner {
+      margin: 20px 0;
+      width: 150px;
+    }
+    footer {
+      background-color: var(--tertiary);
+      padding: 30px 20px;
+    }
+	</style>
+</head>
+<body>
+  <header>
+    <div class="header-img">
+      <img src="assets/badge_logo/svg/logo-no-background.svg" alt="Logo">
+    </div>
+    
+    <nav>
+      <ul class="container">
+        <li><a href="#home">home</a></li>
+        <li><a href="/projects">projects</a></li>
+        <li><a href="/technologies">technology</a></li>
+        <li><a href="/dashboard">dashboard</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="container">
+      <h1>Welcome</h1>
+      <p>Our mission is to work with local councils and organisations to design and build smart farms that grow fresh, nutritient-rich produce at minimal cost all year round for their communities.</p>
+      <p>By combining permaculture design with modern vertical farming technologies and a holistic approach to agriculture, we can improve food security, public health and enhance the beauty and biodiversity of our urban spaces. All while reducing dependence on destructive industrial practise.</p>
+      <p>We are committed to making a positive impact in the communities we serve. This is achieved by creating meaningful, social work, organising open harvest and training events, crowd-sourcing recycled materials and designing to minimise energy usage and waste production.</p>
+      <p>Everyone deserves access to friendly, healthy food and it shouldn't come at the cost of the planet. Let's make that happen!</p>
+
+      <h2>What we do</h2>
+      <ul class="flex column full-width">
+        <li>
+          <p>Develop and maintain open-source smart-farming technologies.</p>
+        </li>
+        <li>
+          <p>Work with community organisations to design and build smart-farm systems.</p>
+        </li>
+        <li>
+          <p>Provide system monitoring, staff training and technical support.</p>
+        </li>
+        <li>
+          <p>Supply continuous learning via network events and our online information hub.</p>
+        </li>
+      </ul>
+
+      <h2>Our work</h2>
+      <p>We're a transparent social enterprise, so all of our work, technology and business is available online.</p>
+      <div class="flex justify-around">
+        <a class="cta" href="#">Smart farm projects</a>
+        <a class="cta" href="#">Open-source technology</a>
+        <a class="cta" href="#">Business dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners">
+    <div class="container">
+      <h2>Partners and Supporters</h2>
+      <div class="flex justify-around">
+        <div class="partner">
+          <img src="assets/text_logo/svg/logo-color.svg" alt="Partner 1">
+        </div>
+        <div class="partner">
+          <img src="assets/text_logo/svg/logo-color.svg" alt="Partner 2">
+        </div>
+        <div class="partner">
+          <img src="assets/text_logo/svg/logo-color.svg" alt="Partner 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>We encourage any local councils and community leaders to get in touch with us to learn more about how we can work together. Organisations and individuals wanting to implement our technology are also welcome to get in touch for assistance.</p>
+      <p><a class="cta" href="mailto:hello@shineponics.org">hello@shineponics.org</a></p>
+    </div>
+  </section>  
+  
+  <footer>
+    <div class="container">
+      <div class="flex full-width justify-around">
+        <p>Email: <a href="mailto:hello@shineponics.org">hello@shineponics.org</a></p>
+        <p>Developers: <a href="https://github.com/shineponics">GitHub</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

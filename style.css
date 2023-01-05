@@ -1,0 +1,129 @@
+html, body {
+  margin: 0;
+  background-color: white;
+  color: #023436;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+h1, h2, h3 {
+  font-family: 'Bellota', sans-serif;
+  font-weight: 700;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.container-sm {
+  max-width: 600px;
+}
+.full-width {
+  width: 100%;
+}
+
+/* Flex utility classes */
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.align-center {
+  align-items: center;
+}
+.align-stretch {
+  align-items: stretch;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+header {
+  height: calc(100vh - 100px);
+}
+.logo-img {
+  flex: 1;
+}
+.logo-img img {
+  width: 80%;
+  max-width: 600px;
+}
+
+.nav-bar {
+  height: 100px;
+  position: sticky;
+  top: 0;
+  background-color: #023436;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.nav-bar a {
+  text-decoration: none;
+  color: #558B2F;
+  font-weight: bold;
+  font-size: 24px;
+}
+.nav-bar a:hover {
+  color: #FFA000;
+}
+
+.mission {
+  padding: 2rem;
+}
+.mission h1 {
+  color: #023436;
+}
+
+.projects {
+  padding: 2rem;
+}
+.project-card {
+  width: 30%;
+  background-color: #558B2F;
+  color: white;
+  padding: 1rem;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.get-in-touch {
+  padding: 2rem;
+}
+.get-in-touch h1 {
+  color: #023436;
+}
+.get-in-touch form {
+  display: flex;
+  flex-direction: column;
+}
+.get-in-touch label {
+  margin-bottom: 0.5rem;
+}
+.get-in-touch input[type="text"], .get-in-touch textarea {
+  border: 1px solid #FFC107;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.get-in-touch input[type="submit"] {
+  background-color: #FFA000;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.get-in-touch input[type="submit"]:hover {
+  background-color: #FFC107;
+}
