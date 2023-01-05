@@ -1,129 +1,121 @@
-html, body {
-  margin: 0;
-  background-color: white;
-  color: #023436;
-  font-family: 'Cabin', sans-serif;
-  font-weight: 400;
-  scroll-behavior: smooth;
+:root {
+  --primary: #558B2F;
+  --secondary: white;
+  --tertiary: #023436;
+  --accent: #FFA000;
 }
-h1, h2, h3 {
-  font-family: 'Bellota', sans-serif;
-  font-weight: 700;
+html, body {
+  font-family: 'Cabin', sans-serif;
+  color: var(--secondary);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+img { width: 100% }
+h1, h2, h3 { 
+  color: var(--secondary); 
+  font-size: 2.2rem;
+  position: relative;
+  margin: 1.2rem 0;
+}
+h2, h3 { font-size: 1.8rem; }
+h1::after, h2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100px;
+  border-bottom: 2px solid var(--accent);
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+ul {
+  padding-top: 10px;
+}
+header {
+  background-image: url('assets/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.header-img {
+  max-width: 500px;
+  flex: 1;
+  display: flex;
+}
+.header-img a {
+  justify-self: center;
+  align-self: center;
+}
+nav {
+  width: 100%;
+  background-color: var(--tertiary);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav li {
+  padding: 20px;
+  font-family: 'Bellota', serif;
+}
+a { 
+  color: var(--secondary);
+  display: inline-block;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+a:hover { 
+  text-decoration-color: var(--tertiary);
+  text-decoration: underline;
+  /* text-decoration-color: var(--accent); */
+}
+.cta {
+  font-family: 'Bellota', serif;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: var(--tertiary);
+}
+section {
+  background-color: var(--primary);
+  padding: 1rem;
 }
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 20px;
 }
-.container-sm {
-  max-width: 600px;
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+.grow {
+  flex: 1;
 }
 .full-width {
   width: 100%;
 }
-
-/* Flex utility classes */
-.flex {
-  display: flex;
-}
-.column {
-  flex-direction: column;
-}
-.justify-center {
-  justify-content: center;
-}
-.justify-between {
-  justify-content: space-between;
-}
 .justify-around {
   justify-content: space-around;
 }
-.align-center {
-  align-items: center;
+.partner {
+  margin: 20px 0;
+  width: 150px;
 }
-.align-stretch {
-  align-items: stretch;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-header {
-  height: calc(100vh - 100px);
-}
-.logo-img {
-  flex: 1;
-}
-.logo-img img {
-  width: 80%;
-  max-width: 600px;
-}
-
-.nav-bar {
-  height: 100px;
-  position: sticky;
-  top: 0;
-  background-color: #023436;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.nav-bar a {
-  text-decoration: none;
-  color: #558B2F;
-  font-weight: bold;
-  font-size: 24px;
-}
-.nav-bar a:hover {
-  color: #FFA000;
-}
-
-.mission {
-  padding: 2rem;
-}
-.mission h1 {
-  color: #023436;
-}
-
-.projects {
-  padding: 2rem;
-}
-.project-card {
-  width: 30%;
-  background-color: #558B2F;
-  color: white;
-  padding: 1rem;
-  margin: 2px;
-  border-radius: 5px;
-}
-
-.get-in-touch {
-  padding: 2rem;
-}
-.get-in-touch h1 {
-  color: #023436;
-}
-.get-in-touch form {
-  display: flex;
-  flex-direction: column;
-}
-.get-in-touch label {
-  margin-bottom: 0.5rem;
-}
-.get-in-touch input[type="text"], .get-in-touch textarea {
-  border: 1px solid #FFC107;
-  border-radius: 5px;
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-.get-in-touch input[type="submit"] {
-  background-color: #FFA000;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.get-in-touch input[type="submit"]:hover {
-  background-color: #FFC107;
+footer {
+  background-color: var(--tertiary);
+  padding: 30px 20px;
 }

@@ -15,6 +15,9 @@ const fileRoutes = files.map((file): Peko.Route => {
 
 server.addRoutes(fileRoutes)
 server.addRoute("/", Peko.staticHandler(new URL(`./public/index.html`, import.meta.url)))
+server.addRoute("/projects", Peko.staticHandler(new URL(`./public/projects.html`, import.meta.url)))
+server.addRoute("/dashboard", Peko.staticHandler(new URL(`./public/dashboard.html`, import.meta.url)))
+server.addRoute("/open-source", Peko.staticHandler(new URL(`./public/dashboard.html`, import.meta.url)))
 
 server.listen()
 
