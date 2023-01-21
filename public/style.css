@@ -18,7 +18,7 @@ h1, h2, h3 {
   color: var(--secondary); 
   font-size: 2.2rem;
   position: relative;
-  margin: 1.2rem 0;
+  margin: 2rem 0;
 }
 h2, h3 { font-size: 1.8rem; }
 h1::after, h2::after {
@@ -37,7 +37,7 @@ ul {
   padding-top: 10px;
 }
 header {
-  background-image: url('assets/header-bg.jpg');
+  background-image: url('assets/DALL-E_banner.png');
   background-size: cover;
   background-position: center;
   min-height: 600px;
@@ -52,8 +52,29 @@ header {
   display: flex;
 }
 .header-img a {
+  height: 300px;
+  width: 300px;
+  background-color: var(--primary);
+  border-radius: 50%;
   justify-self: center;
   align-self: center;
+  text-decoration: none;
+  font-family: 'Bellota';
+}
+.header-img a:hover {
+  text-decoration: none;
+}
+.header-img img {
+  width: 120px;
+}
+.header-img h1 {
+  margin: 0;
+  font-family: 'Cabin';
+  font-weight: normal;
+  font-size: 2.6rem;
+}
+.header-img h1::after {
+  display: none;
 }
 nav {
   width: 100%;
@@ -101,6 +122,15 @@ section {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
+}
+.column {
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
+}
+.align-center {
+  justify-content: center;
 }
 .grow {
   flex: 1;
