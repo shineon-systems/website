@@ -1,0 +1,14 @@
+#
+#        /\_/\  
+#       ( o o ) 
+#    *   > ^ <   *
+#     \ /      \/
+#      |        |
+#       \      / 
+#         v  v
+#         0  0
+#
+#  Robots: Welcome to my website!
+
+User-agent: *
+Disallow:
