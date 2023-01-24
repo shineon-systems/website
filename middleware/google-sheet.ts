@@ -8,6 +8,7 @@ const gcloud = Deno.env.get("DENO_REGION")
 console.log(gcloud);
 
 // need to generate a JWT for google cloud here...
+// const cryp = new Crypto()
 
 const URL = `https://sheets.googleapis.com/v4/spreadsheets/${gcloud.sheet_id}/values/Sheet1!A1:E1:append?valueInputOption=USER_ENTERED`
 

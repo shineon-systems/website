@@ -1,3 +1,4 @@
+/** GENERICS **/
 :root {
   --primary: #558B2F;
   --secondary: white;
@@ -14,13 +15,12 @@ html, body {
   height: 100%;
 }
 img { width: 100% }
-h1, h2, h3 { 
-  color: var(--secondary); 
-  font-size: 2.2rem;
+h1, h2, h3 { color: inherit; }
+h1, h2 {
+  margin: 2rem 0; 
+  font-size: 2.2rem; 
   position: relative;
-  margin: 2rem 0;
 }
-h2, h3 { font-size: 1.8rem; }
 h1::after, h2::after {
   content: "";
   position: absolute;
@@ -28,6 +28,7 @@ h1::after, h2::after {
   width: 100px;
   border-bottom: 2px solid var(--accent);
 }
+h2, h3 { font-size: 1.8rem; }
 p {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -36,6 +37,20 @@ p {
 ul {
   padding-top: 10px;
 }
+a { 
+  color: var(--secondary);
+  display: inline-block;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+a:hover { 
+  text-decoration-color: var(--tertiary);
+  text-decoration: underline;
+  /* text-decoration-color: var(--accent); */
+}
+
+
+/** HEADER & NAV **/
 header {
   background-image: url('assets/DALL-E_banner.webp');
   background-size: cover;
@@ -92,16 +107,46 @@ nav li {
   padding: 20px;
   font-family: 'Bellota', serif;
 }
-a { 
-  color: var(--secondary);
-  display: inline-block;
-  font-size: 1.3rem;
-  text-decoration: none;
+
+
+/** LAYOUT & FLEX UTILS **/
+section {
+  background-color: var(--primary);
+  padding: 1rem;
 }
-a:hover { 
-  text-decoration-color: var(--tertiary);
-  text-decoration: underline;
-  /* text-decoration-color: var(--accent); */
+footer {
+  background-color: var(--tertiary);
+  padding: 30px 20px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.flex { display: flex; }
+.column { flex-direction: column; }
+.align-center { align-items: center; }
+.align-center { justify-content: center; }
+.grow { flex: 1; }
+.full-width { width: 100%; }
+.justify-around { justify-content: space-around; }
+.wrap { flex-wrap: wrap; }
+
+/** COMPONENTS **/
+.card {
+  background-color: var(--secondary);
+  border: 1px solid var(--tertiary);
+  color: var(--tertiary);
+  max-width: 300px;
+  margin: 10px;
+}
+.card-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 20px;
 }
 .cta {
   font-family: 'Bellota', serif;
@@ -109,43 +154,7 @@ a:hover {
   margin: 20px 0;
   background-color: var(--tertiary);
 }
-section {
-  background-color: var(--primary);
-  padding: 1rem;
-}
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -10px;
-}
-.column {
-  flex-direction: column;
-}
-.align-center {
-  align-items: center;
-}
-.align-center {
-  justify-content: center;
-}
-.grow {
-  flex: 1;
-}
-.full-width {
-  width: 100%;
-}
-.justify-around {
-  justify-content: space-around;
-}
 .partner {
   margin: 20px 0;
   width: 150px;
-}
-footer {
-  background-color: var(--tertiary);
-  padding: 30px 20px;
 }
