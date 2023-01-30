@@ -20,6 +20,7 @@ const service_payload = {
 
 export const sheetlytics: Middleware = async (ctx, next) => {
   await next()
+  if (!Deno.env.get("DENO_REGION")) return
 
   if (!access_creds.access_token || !service_jwt || service_payload.exp < Date.now()/1000) {
     service_payload.exp = Date.now()/1000 + 3600
@@ -38,13 +39,13 @@ export const sheetlytics: Middleware = async (ctx, next) => {
     access_creds = await access_response.json()
   }
 
-  fetch(`https://sheets.googleapis.com/v4/spreadsheets/1syAwhZIr1LlYL9Z_Zg7KptgBhzLwWKvxKz42SwoUYIk/values/Requests!A1:E1:append?valueInputOption=USER_ENTERED`, {
+  fetch(`https://sheets.googleapis.com/v4/spreadsheets/1syAwhZIr1LlYL9Z_Zg7KptgBhzLwWKvxKz42SwoUYIk/values/Requests!A1:F1:append?valueInputOption=USER_ENTERED`, {
     method: "POST",
     headers: {
       "Authorization": "Bearer " + access_creds.access_token
     },
     body: JSON.stringify({
-      "range": "Requests!A1:E1",
+      "range": "Requests!A1:F1",
       "majorDimension": "ROWS",
       "values": [
         [

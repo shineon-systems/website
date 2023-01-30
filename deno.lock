@@ -108,6 +108,18 @@
     "https://deno.land/x/peko@1.5.1/utils/Crypto.ts": "cf9dedb6a1fbf6fc81862b1112ebb7c8e9a4978e0cc314c2b9ae73e9bc110a27",
     "https://deno.land/x/peko@1.5.1/utils/ResponseCache.ts": "18f3b4d10472b27bf0f06746af5a37ff623bbed164509fc28e95ff17852ef815",
     "https://deno.land/x/peko@1.5.1/utils/helpers.ts": "8621e2992a5c6a0cc67b6a5bb615c71cb9c4353c15841825bde6e6dbde2becbf",
+    "https://deno.land/x/peko@1.5.2/handlers/sse.ts": "a2d53770a1591096f09268fcb8c81fa758aacf9bf6ad9589037ba9a5820bf72c",
+    "https://deno.land/x/peko@1.5.2/handlers/ssr.ts": "19a06d64522dc183df0ec09be56412b504c82e15c7bf7e8cca9e138ded6e90c6",
+    "https://deno.land/x/peko@1.5.2/handlers/static.ts": "930d98ab1bffd912161a81338912fc2f1a8313e4cf6fbb64be950e0a4737d8b0",
+    "https://deno.land/x/peko@1.5.2/middleware/authenticator.ts": "b927e070a2587f1bb130b84401d71b15e66b762ecbd4a480ffb97f890714e721",
+    "https://deno.land/x/peko@1.5.2/middleware/cacher.ts": "45fb8fc27a5e75fd20cada5f0cc1f723c09bef4a9011ff656351bf243eaddf14",
+    "https://deno.land/x/peko@1.5.2/middleware/logger.ts": "d97edcf14a8298bd64c325d3859c4a5c59097154f9211b992039888315f1765c",
+    "https://deno.land/x/peko@1.5.2/mod.ts": "3272a84452c7f61e19c0cfacccfc17b0f8ed644c01085bb65f346f42763a8458",
+    "https://deno.land/x/peko@1.5.2/server.ts": "a4e5be9ee3c0c22c0994665294a1f8e6aa6df5275e7ec35046a232b48bb7401c",
+    "https://deno.land/x/peko@1.5.2/utils/Cascade.ts": "53ad4c2bf7191c0cc4d8bca0a3eb7db2f979f22212daf5fe1cdb7f7af4734b5e",
+    "https://deno.land/x/peko@1.5.2/utils/Crypto.ts": "84c8cbd28846e5eb14670ac321f467015900e69cd164e3d5552b868e30739328",
+    "https://deno.land/x/peko@1.5.2/utils/ResponseCache.ts": "18f3b4d10472b27bf0f06746af5a37ff623bbed164509fc28e95ff17852ef815",
+    "https://deno.land/x/peko@1.5.2/utils/helpers.ts": "8621e2992a5c6a0cc67b6a5bb615c71cb9c4353c15841825bde6e6dbde2becbf",
     "https://deno.land/x/recursive_readdir@v2.0.0/mod.ts": "521e026015897f04551cc921c619e8c5e69bef161fdc86e7b29a8a85dc8ea1e0"
   }
 }
