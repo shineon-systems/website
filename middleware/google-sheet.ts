@@ -18,6 +18,8 @@ const service_payload = {
   "iat": Date.now()/1000
 }
 
+console.log(gcloud)
+
 export const sheetlytics: Middleware = async (ctx, next) => {
   await next()
   if (!Deno.env.get("DENO_REGION")) return
