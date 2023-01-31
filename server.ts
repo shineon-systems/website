@@ -2,7 +2,7 @@ import * as Peko from "peko"
 import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
 
-import { sheetlytics } from "./middleware/google-sheet.ts"
+import { sheetlytics } from "./middleware/sheetlytics.ts"
 import osRouter from "./public/open-source/index.ts"
 
 const server = new Peko.Server()
