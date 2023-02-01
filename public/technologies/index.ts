@@ -13,14 +13,14 @@ const articles = await Promise.all((await recursiveReaddir(fromFileUrl(new URL("
     name: path.split("/")[path.split("/").length-2]
   })))
 
-router.addRoute("/open-source", Peko.ssrHandler(async () => HTML.replace(
+router.addRoute("/technologies", Peko.ssrHandler(async () => HTML.replace(
   /(?<=<div id="FOSS-tech"(.)*?>)(.|\n)*?(?=<\/div>)/,
   (await Promise.all(articles.map(async article => {
     const content = marky(await Deno.readTextFile(article.path))
     const headings = /(?<=<h1(.)*?>)(.)*?(?=<\/h1>)/.exec(content)
     const imgs = /<img(.)*?>/.exec(content)
     const desc = /(?<=<p id="desc">)(.|\n)*?(?=<\/p>)/.exec(content)
-    return `<a href="/open-source/${article.name}#main">
+    return `<a href="/technologies/${article.name}#main">
       <div class="card">
         ${imgs ? imgs[0] : "no-image"}
         <div class="card-content">
@@ -33,7 +33,7 @@ router.addRoute("/open-source", Peko.ssrHandler(async () => HTML.replace(
 )))
 
 articles.forEach(article => router.addRoute(
-  `/open-source/${article.name}`, 
+  `/technologies/${article.name}`, 
   Peko.ssrHandler(async () => {
     const content = marky(await Deno.readTextFile(article.path))
     return HTML.replace(

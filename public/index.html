@@ -22,8 +22,8 @@
       <ul class="container">
         <li><a href="/">home</a></li>
         <li><a href="/projects#main">smart farms</a></li>
-        <li><a href="/open-source#main">open source</a></li>
-        <li><a href="/dashboard#main">business dashboard</a></li>
+        <li><a href="/technologies#main">open source</a></li>
+        <li><a href="/news#main">news</a></li>
         <li><a href="/#contact">contact</a></li>
       </ul>
     </nav>
@@ -32,12 +32,12 @@
   <section id="main">
     <div class="container">
       <h1>Welcome</h1>
-      <p>Our mission is to work with local councils and organisations to design and build smart farms that grow fresh, nutritient-rich produce at minimal cost all year round for their communities.</p>
+      <p>Our mission is to empower people with food. We work with communities and organisations to design and build smart farms that grow nutritious produce all year round at minimal cost.</p>
       <p>By combining permaculture design with modern vertical farming technologies and a holistic approach to agriculture, we can improve food security, public health and enhance the beauty and biodiversity of our urban spaces. All while reducing dependence on destructive industrial practise.</p>
-      <p>We are committed to making a positive impact in the communities we serve. This is achieved by creating meaningful, social work, organising open harvest and training events, crowd-sourcing recycled materials and designing to minimise energy usage and waste production.</p>
+      <p>All of our technologies are open-source and we are committed to making a positive impact in the communities we serve. This is achieved by using locally-recycled materials, designing to minimise waste and energy consumption and ultimately creating meaningful work and social hubs.</p>
       <p>Everyone deserves access to friendly, healthy food and it shouldn't come at the cost of the planet. Let's make that happen!</p>
 
-      <h2>What we do</h2>
+      <!-- <h2>What we do</h2>
       <ul class="flex column full-width">
         <li>
           <p>Develop and maintain open-source smart-farming technologies.</p>
@@ -46,53 +46,67 @@
           <p>Work with community organisations to design and build smart-farm systems.</p>
         </li>
         <li>
-          <p>Provide system monitoring, staff training and technical support.</p>
+          <p>Provide system monitoring services, staff training and technical support.</p>
         </li>
         <li>
-          <p>Supply continuous learning via network events and our online information hub.</p>
+          <p>Supply continuous learning via network events and online communities.</p>
         </li>
-      </ul>
+        <li>
+          <p>Share our business, we believe social organisations should be transparent.</p>
+        </li>
+      </ul> -->
 
-      <h2>Our work</h2>
-      <p>We believe organisations should be transparent, so we share our business.</p>
       <div class="flex justify-around">
         <a class="cta" href="/projects">Smart farm projects</a>
         <a class="cta" href="/open-source">Open-source technologies</a>
-        <a class="cta" href="/dashboard">Business dashboard</a>
+        <a class="cta" href="/news">Newsletters</a>
       </div>
     </div>
   </section>
 
-  <!-- <section id="partners">
+  <section id="partners">
     <div class="container">
       <h2>Partners and supporters</h2>
       <div class="flex justify-around">
-        <div class="partner">
-          <img src="assets/icons/leaf_white.svg" alt="Partner 1">
+        <a target="_blank" href="https://codeworks.me/" class="partner flex column align-center">
+          <img src="https://avatars.githubusercontent.com/u/20823973?s=200&v=4" alt="Codeworks">
+          <h4>Codeworks</h4>
+        </a>
+        <!-- <div class="partner flex column align-center">
+          <img src="assets/icons/leaf_white.svg" alt="Cognitant">
+          <p>Cognitant</p>
         </div>
-        <div class="partner">
-          <img src="assets/icons/leaf_white.svg" alt="Partner 2">
-        </div>
-        <div class="partner">
-          <img src="assets/icons/leaf_white.svg" alt="Partner 3">
-        </div>
+        <div class="partner flex column align-center">
+          <img src="assets/icons/leaf_white.svg" alt="Permablitz">
+          <p>Permablitz</p>
+        </div> -->
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Get in touch</h2>
-      <p>We encourage community leaders to get in touch with us to learn more about how we can work together. Organisations and individuals wanting to implement our technology are also welcome to get in touch for assistance.</p>
-      <p><a class="cta" href="mailto:hello@shineponics.org">hello@shineponics.org</a></p>
+  <section id="contact" class="flex column align-center">
+    <div class="container cta">
+      <form id="#email-signup" method="post" action="/subscribe">
+        <label>
+          <h3>Subscribe to updates on our<br>technologies and smart farms.</h3>
+          <p>Maximum of one email per week. Zero marketing bs.</p>
+          <input type="email" required size="30"></input>
+        </label>
+        <input type="submit">
+        <a href="/unsubscribe"><button>Unsubscribe</button></a>
+      </form>
     </div>
+    <br>
   </section>  
   
   <footer>
     <div class="container">
+      <h3>Get in touch</h3>
+      <p>Community leaders, please email to learn more about our projects and how we can work together.</p>
+      <p>Organisations and individuals wanting to use our technologies, email or open an issue on GitHub.</p>
       <div class="flex full-width justify-around">
-        <p>Email: <a href="mailto:hello@shineponics.org">hello@shineponics.org</a></p>
-        <p>Developers: <a href="https://github.com/shineponics">GitHub</a></p>
+        <a href="mailto:hello@shineponics.org"><h4>Email: hello@shineponics.org</h4></a>
+        <a href="https://github.com/shine-systems"><h4>GitHub: shine-systems</h4></a>  
       </div>
     </div>
   </footer>

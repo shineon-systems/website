@@ -3,7 +3,7 @@ import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
 
 import { sheetlytics } from "./middleware/sheetlytics.ts"
-import osRouter from "./public/open-source/index.ts"
+import osRouter from "./public/technologies/index.ts"
 
 const server = new Peko.Server()
 server.use(Peko.logger(console.log))
@@ -30,7 +30,7 @@ server.addRoutes(fileRoutes)
 server.addRoute("/", Peko.staticHandler(new URL(`./public/index.html`, import.meta.url)))
 server.addRoute("/projects", Peko.staticHandler(new URL(`./public/projects/index.html`, import.meta.url)))
 server.addRoutes(osRouter.routes)
-server.addRoute("/dashboard", Peko.staticHandler(new URL(`./public/dashboard/index.html`, import.meta.url)))
+server.addRoute("/news", Peko.staticHandler(new URL(`./public/news/index.html`, import.meta.url)))
 
 server.listen()
 

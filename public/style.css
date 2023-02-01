@@ -30,7 +30,9 @@ h1::after, h2::after {
 }
 h1 { font-size: 3rem; }
 h2, h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
 p {
+  font-family: 'Cabin', sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
   margin: 0 0 20px;
@@ -113,7 +115,6 @@ nav li {
 /** LAYOUT & FLEX UTILS **/
 section {
   background-color: var(--primary);
-  padding: 1rem;
 }
 footer {
   background-color: var(--tertiary);
