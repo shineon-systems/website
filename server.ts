@@ -4,6 +4,7 @@ import { fromFileUrl } from "fromFileUrl"
 
 import { sheetlytics } from "./middleware/sheetlytics.ts"
 import osRouter from "./public/technologies/index.ts"
+import { sheetmail } from "./handlers/sheetmail.ts"
 
 const server = new Peko.Server()
 server.use(Peko.logger(console.log))
@@ -31,6 +32,11 @@ server.addRoute("/", Peko.staticHandler(new URL(`./public/index.html`, import.me
 server.addRoute("/projects", Peko.staticHandler(new URL(`./public/projects/index.html`, import.meta.url)))
 server.addRoutes(osRouter.routes)
 server.addRoute("/news", Peko.staticHandler(new URL(`./public/news/index.html`, import.meta.url)))
+
+server.addRoute("/subscribe", {
+  method: "POST",
+  handler: sheetmail
+})
 
 server.listen()
 
