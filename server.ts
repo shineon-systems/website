@@ -4,7 +4,10 @@ import { fromFileUrl } from "fromFileUrl"
 
 import { sheetlytics } from "./middleware/sheetlytics.ts"
 import osRouter from "./public/technologies/index.ts"
-import { sheetmail } from "./handlers/sheetmail.ts"
+import { 
+  subscribe,
+  unsubscribe
+} from "./handlers/sheetmail.ts"
 
 const server = new Peko.Server()
 server.use(Peko.logger(console.log))
@@ -35,7 +38,12 @@ server.addRoute("/news", Peko.staticHandler(new URL(`./public/news/index.html`, 
 
 server.addRoute("/subscribe", {
   method: "POST",
-  handler: sheetmail
+  handler: subscribe
+})
+
+server.addRoute("/unsubscribe", {
+  method: "GET",
+  handler: unsubscribe
 })
 
 server.listen()

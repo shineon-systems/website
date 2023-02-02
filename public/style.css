@@ -65,13 +65,13 @@ header {
   position: relative;
 }
 .header-img {
-  max-width: 500px;
+  max-width: 250px;
   flex: 1;
   display: flex;
 }
 .header-img a {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   background-color: var(--primary);
   border-radius: 50%;
   justify-self: center;
@@ -83,31 +83,32 @@ header {
   text-decoration: none;
 }
 .header-img img {
-  width: 120px;
+  width: 100px;
 }
 .header-img h1 {
   margin: 0;
   font-family: 'Cabin';
   font-weight: normal;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
 }
 .header-img h1::after {
   display: none;
 }
+.header-img p {
+  font-family: 'Bellota';
+  font-size: 1rem;
+}
 nav {
   width: 100%;
   background-color: var(--tertiary);
+  padding: 10px 0;
 }
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 nav li {
-  padding: 20px;
+  margin: 10px;
   font-family: 'Bellota', serif;
 }
 
@@ -115,6 +116,9 @@ nav li {
 /** LAYOUT & FLEX UTILS **/
 section {
   background-color: var(--primary);
+}
+form {
+  max-width: 500px;
 }
 footer {
   background-color: var(--tertiary);
@@ -154,7 +158,7 @@ footer {
 .cta {
   font-family: 'Bellota', serif;
   padding: 20px;
-  margin: 20px 0;
+  margin: 10px;
   background-color: var(--tertiary);
 }
 .partner {
