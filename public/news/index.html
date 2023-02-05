@@ -27,16 +27,40 @@
         <li><a href="/projects#main">smart farms</a></li>
         <li><a href="/technologies#main">open source</a></li>
         <li><a href="/news#main">news</a></li>
-        <li><a href="/#contact">contact</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section id="main" class="grow">
-    <div class="container">
-      <h1>Under construction - come back soon!</h1>
-      <p>:^)</p>
+    <div id="content" class="container">
+      <h1>News</h1> 
+
+      <div id="articles"></div>
     </div>
+  </section> 
+
+  <section id="contact" class="flex column align-center">
+    <div class="container cta">
+      <form method="post" action="/subscribe">
+        <label>
+          <h3>Subscribe to news on our technologies and smart farms.</h3>
+          <p>Maximum of one email per week. Zero marketing BS.</p>
+          <input id="email" name="email" type="email" required size="30">
+        </label>
+        <input type="submit" value="Subscribe">
+        <button id="unsubscribe">Unsubscribe</button>
+        <script>
+          const unsubBtn = document.querySelector("#unsubscribe")
+          const emailIpt = document.querySelector("#email")
+          unsubBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            window.location.href = `/unsubscribe?email=${emailIpt.value}`
+          })
+        </script>
+      </form>
+    </div>
+    <br>
   </section> 
   
   <footer>

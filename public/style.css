@@ -7,6 +7,7 @@
 }
 html, body {
   font-family: 'Cabin', sans-serif;
+  background-color: var(--tertiary);
   color: var(--secondary);
   margin: 0;
   padding: 0;
@@ -146,11 +147,23 @@ footer {
   max-width: 280px;
   margin: 10px;
 }
+.wide-card {
+  box-sizing: border-box;
+  margin: 10px 0;
+  min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 .card img {
   width: 100%;
   height: 140px;
   object-fit: cover;
   border-bottom: 2px solid var(--accent);
+}
+.wide-card img {
+  width: 200px;
+  height: 200px;
+  border: none;
 }
 .card-content {
   padding: 0 20px;
@@ -164,4 +177,11 @@ footer {
 .partner {
   margin: 20px 0;
   width: 150px;
+}
+
+.partner img {
+  border-radius: 50%;
+  height: 150px;
+  object-fit: cover;
+  background-color: white;
 }

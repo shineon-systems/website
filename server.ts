@@ -3,11 +3,13 @@ import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
 
 import { sheetlytics } from "./middleware/sheetlytics.ts"
-import osRouter from "./public/technologies/index.ts"
 import { 
   subscribe,
   unsubscribe
 } from "./handlers/sheetmail.ts"
+
+import techRouter from "./public/technologies/index.ts"
+import newsRouter from "./public/news/index.ts"
 
 const server = new Peko.Server()
 server.use(Peko.logger(console.log))
@@ -33,8 +35,8 @@ const fileRoutes = files.map((file): Peko.Route => {
 server.addRoutes(fileRoutes)
 server.addRoute("/", Peko.staticHandler(new URL(`./public/index.html`, import.meta.url)))
 server.addRoute("/projects", Peko.staticHandler(new URL(`./public/projects/index.html`, import.meta.url)))
-server.addRoutes(osRouter.routes)
-server.addRoute("/news", Peko.staticHandler(new URL(`./public/news/index.html`, import.meta.url)))
+server.addRoutes(techRouter.routes)
+server.addRoutes(newsRouter.routes)
 
 server.addRoute("/subscribe", {
   method: "POST",
