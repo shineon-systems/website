@@ -1,7 +1,7 @@
 {
   "imports": {
     "std/": "https://deno.land/std@0.174.0/",
-    "peko": "https://deno.land/x/peko@1.5.3/mod.ts",
+    "peko": "https://deno.land/x/peko@1.6.0/mod.ts",
     "recursiveReadDir": "https://deno.land/x/recursive_readdir@v2.0.0/mod.ts",
     "fromFileUrl": "https://deno.land/std@0.150.0/path/mod.ts",
     "marky": "https://deno.land/x/marky@v1.1.6/mod.ts"

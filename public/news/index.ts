@@ -12,8 +12,6 @@ const articles = await Promise.all((await recursiveReaddir(fromFileUrl(new URL("
     name: path.split("/")[path.split("/").length-2]
   })))
 
-console.log(articles)
-
 router.addRoute("/news", Peko.ssrHandler(async () => (await Deno.readTextFile(new URL("./index.html", import.meta.url)))
   .replace(
     /(?<=<div id="articles"(.)*?>)(.|\n)*?(?=<\/div>)/,
