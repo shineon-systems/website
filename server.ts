@@ -8,7 +8,7 @@ import {
 import techRouter from "./public/technologies/index.ts"
 import newsRouter from "./public/news/index.ts"
 
-const server = new Peko.Server()
+export const server = new Peko.Server()
 server.use(async (_, next) => {
   try { 
     return await next() 

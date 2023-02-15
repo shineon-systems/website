@@ -25,8 +25,10 @@ h1, h2 {
 h1::after, h2::after {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  left: 0; bottom: 0;
+  height: 2px;
   width: 100px;
+  max-width: 80%;
   border-bottom: 2px solid var(--accent);
 }
 h1 { font-size: 3rem; }
@@ -66,19 +68,21 @@ header {
   position: relative;
 }
 .header-img {
-  max-width: 250px;
+  width: 280px;
   flex: 1;
   display: flex;
 }
 .header-img a {
-  height: 250px;
-  width: 250px;
+  height: 280px;
+  width: 100%;
   background-color: var(--primary);
-  border-radius: 50%;
+  clip-path: polygon( 50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
   justify-self: center;
   align-self: center;
   text-decoration: none;
   font-family: 'Bellota';
+  box-sizing: border-box;
+  padding-top: 20px;
 }
 .header-img a:hover {
   text-decoration: none;
@@ -118,6 +122,10 @@ nav li {
 section {
   background-color: var(--primary);
 }
+#content img {
+  max-height: 500px;
+  object-fit: contain;
+}
 form {
   max-width: 500px;
 }
@@ -156,7 +164,6 @@ footer {
 }
 .card img {
   width: 100%;
-  height: 140px;
   object-fit: cover;
   border-bottom: 2px solid var(--accent);
 }
@@ -167,6 +174,8 @@ footer {
 }
 .card-content {
   padding: 0 20px;
+  flex: 1;
+  min-width: 200px;
 }
 .cta {
   font-family: 'Bellota', serif;

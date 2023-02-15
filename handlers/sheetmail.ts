@@ -2,7 +2,7 @@ import { Handler } from "peko"
 import { getAccess } from "../utils/google-sheet.ts"
 
 export const subscribe: Handler = async (ctx) => {
-  if (!Deno.env.get("DENO_REGION")) return new Response("Not in prod so email not subscribed to sheet.")
+  // if (!Deno.env.get("DENO_REGION")) return new Response("Not in prod so email not subscribed to sheet.")
 
   const data = await ctx.request.formData()
   const email = data.get("email") as string
@@ -41,7 +41,7 @@ export const subscribe: Handler = async (ctx) => {
 }
 
 export const unsubscribe: Handler = async (ctx) => {
-  if (!Deno.env.get("DENO_REGION")) return new Response("Not in prod so email not unsubscribed from sheet.")
+  // if (!Deno.env.get("DENO_REGION")) return new Response("Not in prod so email not unsubscribed from sheet.")
   
   const email = new URL(ctx.request.url).searchParams.get("email")
   if (!email) return new Response("No 'email' param in request url.", { status: 400 })

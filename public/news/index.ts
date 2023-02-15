@@ -12,27 +12,46 @@ const articles = await Promise.all((await recursiveReaddir(fromFileUrl(new URL("
     name: path.split("/")[path.split("/").length-2]
   })))
 
-router.addRoute("/news", Peko.ssrHandler(async () => (await Deno.readTextFile(new URL("./index.html", import.meta.url)))
-  .replace(
+router.addRoute("/news", Peko.ssrHandler(async () => {
+  const HTML = await Deno.readTextFile(new URL("./index.html", import.meta.url))
+  
+  const content = await Promise.all(articles.map(async article => ({
+    ...article,
+    content: marky(await Deno.readTextFile(article.path))
+  })))
+  
+  const cardData = content.map(article => {
+    const headings =  /(?<=<h1(.)*?>)(.)*?(?=<\/h1>)/.exec(article.content)
+    const imgs = /<img(.)*?>/.exec(article.content)
+    const date = /(?<=<h4 id="date">)(.|\n)*?(?=<\/h4>)/.exec(article.content)
+    const desc = /(?<=<p id="desc">)(.|\n)*?(?=<\/p>)/.exec(article.content)
+
+    return {
+      ...article,
+      heading: headings ? headings[0] : "no-heading",
+      img: imgs ? imgs[0] : "",
+      date: date ? date[0] : "no-date",
+      desc: desc ? desc[0] : "no-desc"
+    }
+  })
+  
+  const cardHTML = cardData
+    .sort((a,b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+    .map(article => `<a class="card wide-card" href="/news/${article.name}#main">
+      ${article.img}
+      <div class="card-content">
+        <h2>${article.heading}</h2>
+        <p>${article.date}</p>
+        <p>${article.desc}</p>
+      </div>
+    </a>`)
+    .join("\n")
+
+  return HTML.replace(
     /(?<=<div id="articles"(.)*?>)(.|\n)*?(?=<\/div>)/,
-    (await Promise.all(articles.map(async article => {
-      const content = marky(await Deno.readTextFile(article.path))
-      const headings = /(?<=<h1(.)*?>)(.)*?(?=<\/h1>)/.exec(content)
-      const imgs = /<img(.)*?>/.exec(content)
-      const date = /(?<=<p id="date">)(.|\n)*?(?=<\/p>)/.exec(content)
-      const desc = /(?<=<p id="desc">)(.|\n)*?(?=<\/p>)/.exec(content)
-      
-      return `<a class="card wide-card" href="/news/${article.name}#main">
-        ${imgs ? imgs[0] : "no-image"}
-        <div class="card-content">
-          <h2>${headings ? headings[0] : "no-heading"}</h2>
-          <p>${date ? date[0] : "no-desc"}</p>
-          <p>${desc ? desc[0] : "no-desc"}</p>
-        </div>
-      </a>`
-    }))).join("\n")
+    cardHTML
   )
-))
+}))
 
 articles.forEach(article => router.addRoute(
   `/news/${article.name}`, 

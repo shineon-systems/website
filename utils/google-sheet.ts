@@ -1,14 +1,23 @@
 import { Crypto } from "peko";
 
-const gcloud = Deno.env.get("DENO_REGION")
-  ? Deno.env.toObject() as { private_key: string }
-  : (await import("../keys/shineponics-aab9d679a43d.json", {
-    assert: { type: "json" },
-  })).default;
+let gcloud
+if (Deno.env.get("DENO_REGION")) {
+  gcloud = Deno.env.toObject() as { 
+    private_key: string,
+    client_email: string
+  }
+} else {
+  for await (const file of Deno.readDir(new URL("../keys", import.meta.url))) {
+    gcloud = (await import(new URL(`../keys/${file.name}`, import.meta.url).pathname, {
+      assert: { type: "json" },
+    })).default
+  }
+}
+
 const gCrypto = new Crypto(gcloud.private_key, { name: "RSA", hash: "SHA-256" })
 
 const service_payload = {
-  "iss": "shineponics-deno@shineponics.iam.gserviceaccount.com",
+  "iss": gcloud.client_email,
   "scope": "https://www.googleapis.com/auth/spreadsheets",
   "aud": "https://oauth2.googleapis.com/token",
   "exp": Date.now()/1000 + 3600,
