@@ -1,10 +1,10 @@
 import { Middleware } from "peko"
-import { getAccess } from "../utils/google-sheet.ts"
+import { getAccess } from "../utils/gcp.ts"
 
 export const sheetlytics: Middleware = async (ctx, next) => {
   await next()
 
-  if (!Deno.env.get("DENO_REGION")) return
+  // if (!Deno.env.get("DENO_REGION")) return
 
   const access_creds = await getAccess()
 

@@ -3,7 +3,7 @@ import { sheetlytics } from "./middleware/sheetlytics.ts"
 import { 
   subscribe,
   unsubscribe
-} from "./handlers/sheetmail.ts"
+} from "./handlers/emailstore.ts"
 
 import techRouter from "./public/technologies/index.ts"
 import newsRouter from "./public/news/index.ts"
