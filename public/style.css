@@ -119,10 +119,16 @@ nav li {
   margin: 10px;
   font-family: 'Bellota', serif;
 }
+@media only screen and (max-width: 600px) {
+  nav {
+    position: static;
+  }
+}
 
 
 /** LAYOUT & FLEX UTILS **/
 section {
+  padding: 40px 0;
   background-color: var(--primary);
 }
 #content img {

@@ -1,7 +1,8 @@
-import { html, css } from "../utils/react-components.ts"
+import { html } from "../utils/react-components.ts"
 import Head from "../components/Head.ts"
 import Header from "../components/Header.ts"
 import Newsletter from "../components/Newsletter.ts"
+import Footer from "../components/Footer.ts"
 
 export default function Farms() {
   return html`
@@ -18,6 +19,8 @@ export default function Farms() {
       </section> 
 
       <${Newsletter} />
+
+      <${Footer} />
     </body>
   `
 }
