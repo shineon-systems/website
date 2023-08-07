@@ -13,7 +13,6 @@ import Home from "./pages/Home.ts"
 import News from "./pages/News.ts"
 import Farms from "./pages/Farms.ts"
 import Source from "./pages/Source.ts"
-import { farms } from "./public/farms/index.ts"
 
 // SETUP
 export const router = new Peko.Router()
@@ -33,7 +32,7 @@ const articles = await setupPublicRoutes(router)
 router.get("/", Peko.ssrHandler(() => renderToReadableStream(html`<${Home} />`)))
 
 router.get("/farms", {
-  middleware: getLatestFarmData(farms),
+  middleware: getLatestFarmData(),
   handler: Peko.ssrHandler((ctx) => renderToReadableStream(html`<${Farms} farms=${ctx.state.farms} />`))
 })
 

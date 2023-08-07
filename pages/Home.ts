@@ -19,9 +19,9 @@ export default function Home() {
           <p>Everyone deserves access to friendly, healthy food and it shouldn't come at the cost of the planet. Let's make that happen!</p>
 
           <div class="flex wrap justify-around">
-            <a class="cta" href="/projects">Smart farm projects</a>
-            <a class="cta" href="/open-source">Open-source technologies</a>
-            <a class="cta" href="/news">Newsletters</a>
+            <a class="cta highlighted" href="/projects">Smart farm projects</a>
+            <a class="cta highlighted" href="/open-source">Open-source technologies</a>
+            <a class="cta highlighted" href="/news">Newsletters</a>
           </div>
         </div>
       </section>

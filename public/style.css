@@ -53,6 +53,15 @@ a.highlighted {
 a.highlighted:hover { 
   text-decoration-color: var(--accent);
 }
+input[type=submit], button {
+  cursor: pointer;
+  color: var(--secondary);
+  background-color: var(--accent);
+  border: 1px solid var(--tertiary);
+  border-radius: 5px;
+  margin: 2px;
+  padding: 5px;
+}
 
 
 /** HEADER & NAV **/
@@ -120,6 +129,10 @@ nav li {
 }
 nav a {
   text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 @media only screen and (max-width: 600px) {
   nav {

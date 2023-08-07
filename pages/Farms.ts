@@ -6,7 +6,6 @@ import Footer from "../components/Footer.ts"
 import { FarmData } from "../types.ts"
 
 export default function Farms({ farms = [] }: { farms: FarmData[] }) {
-  console.log(farms)
   return html`
     <${Head} pageName="Farms"/>
     <body>
@@ -30,7 +29,7 @@ export default function Farms({ farms = [] }: { farms: FarmData[] }) {
                   })}
                   <li>Updated: ${farm.date.toLocaleString()}</li>
                 </ul>
-                <a href=${farm.link} class="highlighted"><p>Read more</p></a>
+                <!-- <a href=${farm.link} class="highlighted"><p>Read more</p></a> -->
               </div>
             </div>`)}
           </div>
