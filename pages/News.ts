@@ -21,15 +21,16 @@ export default function News({ articles, article }: { articles?: Article[], arti
                 ${articles && articles
                   .sort((a,b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
                   .map(({ title, slug, date, desc, imgs }) => html`
-                  <a class="card wide-card" href="/news/${slug}#main">
+                  <div class="card wide-card" href="/news/${slug}#main">
                     <div class="card-img" dangerouslySetInnerHTML=${{ __html: imgs[0] }} />
                     
                     <div class="card-content">
                         <h2>${title}</h2>
                         <p>${date}</p>
                         <p>${desc}</p>
+                        <a href="/news/${slug}#main" class="highlighted"><p>Read more</p></a>
                     </div>
-                  </a>`)}
+                </div>`)}
               </div>
             </div>`
           : html`<div id="content" class="container" dangerouslySetInnerHTML=${{ __html: html`${article.body}`}} />`

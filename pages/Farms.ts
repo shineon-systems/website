@@ -3,18 +3,37 @@ import Head from "../components/Head.ts"
 import Header from "../components/Header.ts"
 import Newsletter from "../components/Newsletter.ts"
 import Footer from "../components/Footer.ts"
+import { FarmData } from "../types.ts"
 
-export default function Farms() {
+export default function Farms({ farms = [] }: { farms: FarmData[] }) {
+  console.log(farms)
   return html`
     <${Head} pageName="Farms"/>
     <body>
       <${Header} />
 
       <section id="main" class="grow">
-        <div class="container">
-          <h1>Under construction - come back soon!</h1>
-          <p>Subscribe your email below and we'll let you know when the first farm project launches :^)</p>
-          <p>You'll be able to see live metrics from farm systems right here... :o</p>
+        <div id="content" class="container">
+          <h1>Operational smart farms</h1> 
+
+          <div id="articles" class="flex full-width justify-around wrap">
+            ${farms.map(farm => html`<div class="card">
+              <img src=${farm.img} alt=${farm.name} />
+              
+              <div class="card-content">
+                <h2>${farm.name}</h2>
+                <p>${farm.desc}</p>
+                <p>Latest data:</p>
+                <ul>
+                  ${farm.devices[0].sensors.map(sensor => {
+                    return html`<li>${sensor.name}: ${sensor.value} ${sensor.unit}</li>`
+                  })}
+                  <li>Updated: ${farm.date.toLocaleString()}</li>
+                </ul>
+                <a href=${farm.link} class="highlighted"><p>Read more</p></a>
+              </div>
+            </div>`)}
+          </div>
         </div>
       </section> 
 

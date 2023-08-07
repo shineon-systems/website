@@ -3,6 +3,7 @@ import { html } from "./utils/react-components.ts"
 import { setupPublicRoutes } from "./utils/setup-public.ts"
 import { renderToReadableStream } from "react-dom/server"
 import { sheetlytics } from "./middleware/gcp-sheetlytics.ts"
+import { getLatestFarmData } from "./middleware/gcp-farmsheet.ts"
 import { 
   subscribe,
   unsubscribe
@@ -12,11 +13,12 @@ import Home from "./pages/Home.ts"
 import News from "./pages/News.ts"
 import Farms from "./pages/Farms.ts"
 import Source from "./pages/Source.ts"
+import { FarmData } from "./types.ts"
 
 // SETUP
 export const router = new Peko.Router()
 router.use(Peko.logger(console.log))
-router.use(sheetlytics("1syAwhZIr1LlYL9Z_Zg7KptgBhzLwWKvxKz42SwoUYIk"))
+router.use(sheetlytics(Deno.env.get("sheetlytics_sheet_id") || ""))
 router.use(async (_, next) => {
   try { 
     return await next() 
@@ -28,10 +30,23 @@ router.use(async (_, next) => {
 
 // PAGES
 const articles = await setupPublicRoutes(router)
+const farms: FarmData[] = [
+  {
+    name: "Balcony Farm",
+    desc: "Single device system, monitors environmental conditions for my balcony tomato planter.",
+    img: "/public/farms/balcony_farm.webp",
+    sheetID: "1vta1Wd62aMtHYvnfWa3M_FY-QM0vMHMppIr7C-zzIY0",
+    link: "/news/the-first-system#main",
+    date: new Date(),
+    devices: []
+  }
+]
 router.get("/", Peko.ssrHandler(() => renderToReadableStream(html`<${Home} />`)))
 
-router.get("/farms", Peko.ssrHandler(() => renderToReadableStream(html`<${Farms} articles=${articles.farms} />`)))
-articles.farms?.forEach(article => router.get(`/farms/${article.slug}`, Peko.ssrHandler(() => renderToReadableStream(html`<${Farms} article=${article} />`))))
+router.get("/farms", {
+  middleware: getLatestFarmData(farms),
+  handler: Peko.ssrHandler((ctx) => renderToReadableStream(html`<${Farms} farms=${ctx.state.farms} />`))
+})
 
 router.get("/news", Peko.ssrHandler(() => renderToReadableStream(html`<${News} articles=${articles.news} />`)))
 articles.news?.forEach(article => router.get(`/news/${article.slug}`, Peko.ssrHandler(() => renderToReadableStream(html`<${News} article=${article} />`))))

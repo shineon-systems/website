@@ -16,7 +16,7 @@ export default function Header() {
       <ul class="container flex wrap justify-around">
         <li><a href="/">home</a></li>
         <li><a href="/farms#main">smart farms</a></li>
-        <li><a href="/source#main">open source</a></li>
+        <li><a href="/source#main">source code</a></li>
         <li><a href="/news#main">news</a></li>
         <li><a href="#newsletter">contact</a></li>
       </ul>
