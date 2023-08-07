@@ -13,7 +13,7 @@ import Home from "./pages/Home.ts"
 import News from "./pages/News.ts"
 import Farms from "./pages/Farms.ts"
 import Source from "./pages/Source.ts"
-import { FarmData } from "./types.ts"
+import { farms } from "./public/farms/index.ts"
 
 // SETUP
 export const router = new Peko.Router()
@@ -30,17 +30,6 @@ router.use(async (_, next) => {
 
 // PAGES
 const articles = await setupPublicRoutes(router)
-const farms: FarmData[] = [
-  {
-    name: "Balcony Farm",
-    desc: "Single device system, monitors environmental conditions for my balcony tomato planter.",
-    img: "/public/farms/balcony_farm.webp",
-    sheetID: "1vta1Wd62aMtHYvnfWa3M_FY-QM0vMHMppIr7C-zzIY0",
-    link: "/news/the-first-system#main",
-    date: new Date(),
-    devices: []
-  }
-]
 router.get("/", Peko.ssrHandler(() => renderToReadableStream(html`<${Home} />`)))
 
 router.get("/farms", {
