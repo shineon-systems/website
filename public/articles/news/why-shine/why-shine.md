@@ -3,7 +3,7 @@
 <h4 id="date">2023-02-05</h4>
 <p id="desc">Did you ever see a naturally-overgrown city on screen and think "huh, that looks pretty nice"? Me too. Let's just get there without the apocolyptic bit.</p>
 
-![why-shine](/news/articles/why-shine/noun-light-bulb-58666.png)
+![why-shine](/public/articles/news/why-shine/noun-light-bulb-58666.png)
 
 <hr>
 

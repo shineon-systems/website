@@ -1,14 +1,12 @@
 import { Middleware } from "peko"
-import { getAccess } from "../utils/gcp.ts"
+import { getAccess } from "../utils/gcp-access.ts"
 
-export const sheetlytics: Middleware = async (ctx, next) => {
+export const sheetlytics = (sheetId: string): Middleware => async (ctx, next) => {
   await next()
 
-  // if (!Deno.env.get("DENO_REGION")) return
+  const access_creds = await getAccess("https://www.googleapis.com/auth/spreadsheets")
 
-  const access_creds = await getAccess()
-
-  fetch(`https://sheets.googleapis.com/v4/spreadsheets/1syAwhZIr1LlYL9Z_Zg7KptgBhzLwWKvxKz42SwoUYIk/values/Requests!A1:F1:append?valueInputOption=USER_ENTERED`, {
+  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Requests!A1:F1:append?valueInputOption=USER_ENTERED`, {
     method: "POST",
     headers: {
       "Authorization": "Bearer " + access_creds.access_token

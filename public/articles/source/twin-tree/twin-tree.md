@@ -3,7 +3,7 @@
 <p id="date"><strong>24/01/2023</strong></p>
 <p id="desc">TypeScript framework for remotely modelling and managing event-based control system networks as trees. 🌲</p>
 
-![twin-tree-diagram](/technologies/articles/twin-tree/twin-tree.webp)
+![twin-tree-diagram](/public/articles/source/twin-tree/twin-tree.webp)
 
 This is a core part of the Shineponics platform. It allows for the creation and management of in-memory digital twins of real sensor and control systems. 
 
