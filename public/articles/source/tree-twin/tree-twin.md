@@ -1,6 +1,6 @@
 # Tree twin
 
-<p id="date"><strong>24/01/2023</strong></p>
+<p id="date"><strong>24/01/2023</strong> (Editted 07/08/23)</p>
 <p id="desc">TypeScript framework for remotely modelling and managing event-based control system networks as trees. 🌲</p>
 
 ![twin-tree-diagram](/public/articles/source/tree-twin/tree-twin.webp)

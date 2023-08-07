@@ -15,7 +15,7 @@ export default function Source({ articles, article }: { articles?: Article[], ar
       <section id="main" class="grow">
         ${!article 
           ? html`<div id="content" class="container">
-              <h1>Our free technologies</h1>
+              <h1>Open-source technologies</h1>
               <div id="FOSS-tech" class="flex full-width justify-around wrap">
                 ${articles && articles.map(({ title, slug, desc, imgs }) => html`
                   <div class="card">

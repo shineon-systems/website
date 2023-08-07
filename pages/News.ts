@@ -15,7 +15,7 @@ export default function News({ articles, article }: { articles?: Article[], arti
       <section id="main" class="grow">
         ${!article 
           ? html`<div id="content" class="container">
-              <h1>News</h1> 
+              <h1>Shineponics news</h1> 
 
               <div id="articles" class="flex full-width justify-around wrap">
                 ${articles && articles
