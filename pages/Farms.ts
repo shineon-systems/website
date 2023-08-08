@@ -24,7 +24,7 @@ export default function Farms({ farms = [] }: { farms: FarmData[] }) {
                 <p>${farm.desc}</p>
                 <p>Latest data:</p>
                 <ul>
-                  ${farm.devices[0].sensors.map(sensor => {
+                  ${farm.devices[0] && farm.devices[0].sensors.map(sensor => {
                     return html`<li>${sensor.name}: ${sensor.value} ${sensor.unit}</li>`
                   })}
                   <li>Updated: ${farm.date.toLocaleString()}</li>
