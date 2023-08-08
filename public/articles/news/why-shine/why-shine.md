@@ -1,6 +1,6 @@
 # Why Shine?
 
-<h4 id="date">2023-02-05</h4>
+<p id="date"><strong>2023/02/05</strong> (editted: 08/08/23)</p>
 <p id="desc">Did you ever see a naturally-overgrown city on screen and think "huh, that looks pretty nice"? Me too. Let's just get there without the apocolyptic bit.</p>
 
 ![why-shine](/public/articles/news/why-shine/noun-light-bulb-58666.png)
@@ -19,7 +19,7 @@ Of course, food sovereignty is just one part of a much larger societal movement.
 
 We all want a better future. This is a deeply important pursuit that requires action and that is what Shineponics is, action. Also it's pretty fun to write code that helps plants grow in cities. Just picture that, a city full of urban farms and forests that support local communities. Epic.
 
-If you would like to see Shineponics in action then check out our ongoing smart farm projects at [shineponics.org/projects](https://shineponics.org/projects).
+If you would like to see Shineponics in action then check out our ongoing smart farm projects at [shineponics.org/farms](https://shineponics.org/farms).
 
 Please do get in touch via the email below if you are interested in continuing this conversation.
 

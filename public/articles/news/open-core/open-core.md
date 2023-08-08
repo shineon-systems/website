@@ -1,6 +1,6 @@
 # Open-core and co-ops in the land of the future
 
-<h4 id="date">2023-02-15</h4>
+<h4 id="date">2023/02/15</h4>
 <p id="desc">Can we build an equitable tech business that aims to liberate without being hypocrites?</p>
 
 <hr>

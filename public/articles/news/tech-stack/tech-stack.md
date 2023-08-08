@@ -1,6 +1,6 @@
 # "Better-than-green" tech
 
-<h4 id="date">2023-02-07</h4>
+<p id="date"><strong>2023/02/07</strong> (editted: 08/08/23)</p>
 <p id="desc">What is "green" technology? Is it anywhere near being actually sustainable? Here's how we strive to do better than "green" and truly pioneer sustainable tech business and social change.</p>
 
 <hr>
@@ -29,10 +29,10 @@ We also build our platforms to support user-owned data first and cloud-stored da
 
 ## Energy
 
-A secondary benefit to our local-data-first approach is that our software uses less energy than other similar software because we simply interact with less stuff. Without as many database read and writes we transmit less. On top of this we run all of our web applications on the serverless edge with Deno Deploy. This means we never maintain unused server infrastructure, we spin up code when its needed and let it die when its not. 
+A secondary benefit to our local-data-first approach is that our software uses less energy than other similar software because we simply interact with less stuff. Without as many database read and writes we transmit less. On top of this we run all of our web applications on the serverless edge with Deno Deploy. This means we never maintain unused server infrastructure, we spin up code when its needed and let it die when its not. Hooray for energy efficient cloud services! 
 
 ## Hardware
 
-Shineponics hardware is a work in progress. We are currently experimenting with ESPHome boards and peripherals as they appear to be the best community-backed and open-source solution for low-cost IoT devices. However there is much more to investigate here. We also can't avoid the fact that the raw materials used in hardware boards are very unlikely to be sustainably sourced. This will therefore continue to be "non-green" until locally-produced hardware is available. This may not be possible yet but is certainly on the roadmap. I hope for now that the decisions made in developing our software provide assurance that our hardware choices will be made with as much consideration towards our communities and the environment as possible.
+Shineponics hardware is a work in progress. We are currently experimenting with ESP8266 boards and peripherals as they appear to be the best community-backed and open-source solution for low-cost IoT devices. However there is much more to investigate here. We also can't avoid the fact that the raw materials used in hardware boards are likely not sustainably sourced. This will therefore continue to be "non-green" until locally-produced hardware is available. This may not be possible yet but is certainly on the roadmap. I hope for now that the decisions made in developing our software provide assurance that our hardware choices will be made with as much consideration towards our communities and the environment as possible.
 
 Stay tuned for the next steps in our "better" direction. Goodbye for now!
