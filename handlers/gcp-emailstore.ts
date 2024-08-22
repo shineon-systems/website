@@ -1,4 +1,4 @@
-import { Handler } from "peko"
+import { Handler } from "@sejori/peko"
 import { getAccess } from "../utils/gcp-access.ts"
 
 export const subscribe = (bucketName: string): Handler => async (ctx) => {

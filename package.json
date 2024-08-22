@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@sejori/peko": "^2.1.0",
+    "htm": "^3.1.1",
+    "marky": "^1.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "build": "esbuild --bundle --sourcemap --target=es2020 --platform=browser --format=esm --outdir=./dist --external:react --jsx=automatic --tsconfig-raw={} ./src/**/*.ts",
+    "build:watch": "esbuild --bundle --sourcemap --target=es2020 --platform=browser --format=esm --outdir=./dist --external:react --jsx=automatic --tsconfig-raw={} --watch=forever ./src/**/*.ts",
+    "dev": "wrangler dev --port 3000"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.1",
+    "wrangler": "^3.72.1"
+  }
+}

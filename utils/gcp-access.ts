@@ -1,4 +1,4 @@
-import { Crypto } from "peko";
+import { Crypto } from "@sejori/peko";
 
 let gcloud: Record<string, string>
 if (Deno.env.get("DENO_REGION")) {
@@ -12,7 +12,7 @@ if (Deno.env.get("DENO_REGION")) {
   }
 } else {
   gcloud = (await import(new URL(`../keys/gcp.json`, import.meta.url).pathname, {
-    assert: { type: "json" },
+    with: { type: "json" },
   })).default
 }
 

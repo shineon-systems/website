@@ -1,4 +1,4 @@
-import { html } from "../utils/react-components.ts"
+import { html } from "../../utils/react-components.ts"
 
 export default function Footer() {
   return html`
@@ -9,7 +9,7 @@ export default function Footer() {
         <p>Organisations and individuals wanting to use our technologies, email or open an issue on GitHub.</p>
         <br />
         <div class="flex wrap full-width justify-around">
-          <a href="mailto:hello@shineponics.org" class="highlighted"><p><strong>Email:</strong> hello@shineponics.org</p></a>
+          <a href="mailto:hello@shine.systems.org" class="highlighted"><p><strong>Email:</strong> hello@shine.systems</p></a>
           <a href="https://github.com/shine-systems" class="highlighted"><p><strong>GitHub:</strong> shine-systems</p></a>  
         </div>
       </div>

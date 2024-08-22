@@ -1,4 +1,4 @@
-import { Middleware } from "peko"
+import { Middleware } from "@sejori/peko"
 import { getAccess } from "../utils/gcp-access.ts"
 
 export const sheetlytics = (sheetId: string): Middleware => async (ctx, next) => {

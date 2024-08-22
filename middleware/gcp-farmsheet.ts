@@ -1,4 +1,4 @@
-import { Middleware } from "peko"
+import { Middleware } from "@sejori/peko"
 import { getAccess } from "../utils/gcp-access.ts"
 import { FarmData } from "../types.ts"
 

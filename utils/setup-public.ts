@@ -1,4 +1,4 @@
-import * as Peko from "peko"
+import * as Peko from "@sejori/peko"
 import { marky } from "marky"
 import { Article } from "../types.ts"
 

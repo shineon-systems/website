@@ -1,4 +1,4 @@
-import { html } from "../utils/react-components.ts"
+import { html } from "../../utils/react-components.ts"
 
 export default function Head({ pageName }: { pageName: string }) {
   return html`

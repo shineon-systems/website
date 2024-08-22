@@ -1,9 +1,9 @@
-import { html } from "../utils/react-components.ts"
+import { html } from "../../utils/react-components.ts"
 import Head from "../components/Head.ts"
 import Header from "../components/Header.ts"
 import Newsletter from "../components/Newsletter.ts"
 import Footer from "../components/Footer.ts"
-import { FarmData } from "../types.ts"
+import { FarmData } from "../../types.ts"
 
 export default function Farms({ farms = [] }: { farms: FarmData[] }) {
   return html`

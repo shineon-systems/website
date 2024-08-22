@@ -1,5 +1,5 @@
-import { html } from "../utils/react-components.ts"
-import { Article } from "../types.ts"
+import { html } from "../../utils/react-components.ts"
+import { Article } from "../../types.ts"
 
 import Head from "../components/Head.ts"
 import Header from "../components/Header.ts"
