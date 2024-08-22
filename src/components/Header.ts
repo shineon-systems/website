@@ -1,4 +1,4 @@
-import { html } from "../../utils/react-components.ts"
+import { html } from "../../utils/react.utils.ts"
 
 export default function Header() {
   return html`

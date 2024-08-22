@@ -1,4 +1,4 @@
-import { html } from "../../utils/react-components.ts"
+import { html } from "../../utils/react.utils.ts"
 import { Article } from "../../types.ts"
 
 import Head from "../components/Head.ts"

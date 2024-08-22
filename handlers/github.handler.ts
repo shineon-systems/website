@@ -8,6 +8,8 @@ export const githubHandler =
         ? `https://raw.githubusercontent.com/shineon-systems/website/`
         : import.meta.url.replace("handlers/github.handler.ts", "");
 
+        console.log(`${base}${path}`)
+
     return (
       await file(new URL(`${base}${path}`), {
         headers: new Headers({

@@ -1,16 +1,14 @@
 import * as Peko from "@sejori/peko"
-import { html } from "./utils/react-components.ts"
-import { setupPublic } from "./utils/setup-public.ts"
 import { renderToReadableStream } from "react-dom/server"
-// import { 
-//   subscribe,
-//   unsubscribe
-// } from "./handlers/gcp-emailstore.ts"
+
+import { githubHandler } from "./handlers/github.handler.ts"
+import { html } from "./utils/react.utils.ts"
+import { setupArticleData } from "./utils/article.utils.ts"
+import articlesData from "./articles/index.json" assert { type: "JSON" }
 
 import Home from "./src/pages/Home.ts"
 import Source from "./src/pages/Source.ts"
 import News from "./src/pages/News.ts"
-import { githubHandler } from "./handlers/github.handler.ts"
 
 // SETUP
 export const router = new Peko.Router()
@@ -24,24 +22,26 @@ router.use(async (_, next) => {
   }
 })
 
+
 // PAGES
-// const articles = await setupPublicRoutes(router)
-router.get("/public/:p1/:p2/:p3/:p4", (ctx) => {
-  const path = [ctx.params.p1, ctx.params.p2, ctx.params.p3, ctx.params.p4].filter(Boolean).join("/")
-  return githubHandler(path)(ctx)
-});
-router.get("/", (ctx) => {
-  setupPublic()
-  return Peko.ssr(() => renderToReadableStream(html`<${Home} />`))(ctx)
-})
+router.get("/", Peko.ssr(() => renderToReadableStream(html`<${Home} />`)))
+const articles = setupArticleData(articlesData)
+console.log(articles)
 
-// router.get("/source", Peko.ssr(() => renderToReadableStream(html`<${Source} articles=${articles.source} />`)))
-// articles.source?.forEach(article => router.get(`/source/${article.slug}`, Peko.ssr(() => renderToReadableStream(html`<${Source} article=${article} />`))))
+router.get("/source", Peko.ssr(() => renderToReadableStream(html`<${Source} articles=${articles.source} />`)))
+articles.source.forEach(article => router.get(`/source/${article.slug}`, Peko.ssr(() => renderToReadableStream(html`<${Source} article=${article} />`))))
 
-// router.get("/news", Peko.ssr(() => renderToReadableStream(html`<${News} articles=${articles.news} />`)))
-// articles.news?.forEach(article => router.get(`/news/${article.slug}`, Peko.ssr(() => renderToReadableStream(html`<${News} article=${article} />`))))
+router.get("/news", Peko.ssr(() => renderToReadableStream(html`<${News} articles=${articles.news} />`)))
+articles.news.forEach(article => router.get(`/news/${article.slug}`, Peko.ssr(() => renderToReadableStream(html`<${News} article=${article} />`))))
 
 router.get("/contact", Peko.ssr(() => renderToReadableStream(html`<${Home} />`)))
+
+// PUBLIC ASSETS
+router.get("/public/:p1", async (ctx) => githubHandler(`public/${ctx.params.p1}`)(ctx));
+router.get("/public/:p1/:p2", async (ctx) => {
+    const path = [ctx.params.p1, ctx.params.p2].filter(Boolean).join("/")
+    return githubHandler(`public/${path}`)(ctx)
+});
 
 // APIS
 // router.post("/subscribe", subscribe("shineponics-mailing-list"))
