@@ -3,7 +3,7 @@ import { html } from "../../utils/react-components.ts"
 export default function Head({ pageName }: { pageName: string }) {
   return html`
     <head>
-      <title>${`shineponics${pageName ? " | " + pageName : ""}`}</title>
+      <title>${`Shineon Systems${pageName ? " | " + pageName : ""}`}</title>
       <meta charset="utf-8" />
       <meta name="description" content="smart food sovereignty" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
