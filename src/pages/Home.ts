@@ -20,7 +20,7 @@ export default function Home() {
 
           <div class="flex wrap justify-around">
             <a class="cta highlighted" href="/projects">Smart farm projects</a>
-            <a class="cta highlighted" href="/open-source">Open-source technologies</a>
+            <a class="cta highlighted" href="/source">Open-source technologies</a>
             <a class="cta highlighted" href="/news">Newsletters</a>
           </div>
         </div>

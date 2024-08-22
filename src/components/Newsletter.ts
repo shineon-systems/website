@@ -7,7 +7,7 @@ export default function Newsletter() {
         <form method="post">
           <label>
             <h3>Subscribe to news on our technologies and smart farms.</h3>
-            <p>Maximum of one email per week. Zero marketing BS.</p>
+            <p>Maximum of one email per week. Zero BS.</p>
             <input id="email" name="email" type="email" required size="30" />
           </label>
           <input type="submit" formaction="/subscribe" value="Subscribe" />

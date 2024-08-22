@@ -5,10 +5,8 @@ export const githubHandler =
   async (ctx: RequestContext<{ env?: { ENVIRONMENT: string } }>) => {
     const base =
       ctx.state.env?.ENVIRONMENT === "production" || !import.meta.url
-        ? `https://raw.githubusercontent.com/shineon-systems/website/`
+        ? `https://raw.githubusercontent.com/shineon-systems/website/main/`
         : import.meta.url.replace("handlers/github.handler.ts", "");
-
-        console.log(`${base}${path}`)
 
     return (
       await file(new URL(`${base}${path}`), {

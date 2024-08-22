@@ -31,7 +31,7 @@ export function setupArticleData(inputData: Record<string, string>) {
       imgs: imgs ? Array.from(imgs) : [],
     };
 
-    const type = pathBits.includes('/source/') ? 'source' : 'news';
+    const type = entry[0].includes('/source/') ? 'source' : 'news';
 
     articles[type].push(article);
   });
